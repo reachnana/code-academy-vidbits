@@ -1,0 +1,35 @@
+<div class="title-container"><h1 id="title-headline">Save a video</h1></div>
+<div class="contents-container" id="create-video-container">
+  <form method="post" action="/videos">
+    <label for="title-input">Title</label>
+    <input type="text" id="title-input" name="title" placeholder="Title" value="{{video.title}}">
+    {{#with video.errors.title as |error|}}
+    <span class="error">{{error.message}}</span>
+    {{/with}}
+
+    <label for="description-input">Description</label>
+    <textarea id="description-input" name="description" placeholder="Description">{{video.description}}</textarea>
+    {{#with video.errors.title as |error|}}
+    <span class="error">{{error.message}}</span>
+    {{/with}}
+
+    <label for="url-input">URL</label>
+    <input type="text" id="url-input" name="url" placeholder="URL" value="{{video.url}}">
+    {{#with video.errors.url as |error|}}
+    <span class="error">{{error.message}}</span>
+    {{/with}}
+
+    <div class="checkbox-wrapper">
+      <label for="gif-input">Is GIF?</label>
+      {{#if video.gif}}
+      <input type="checkbox" id="gif-input" name="gif" value="gif" checked>
+      {{else}}
+      <input type="checkbox" id="gif-input" name="gif" value="gif">
+      {{/if}}
+    </div>
+
+    <button class="button submit-button" id="submit-button" type="submit">
+      Create new video
+    </button>
+  </form>
+</div>

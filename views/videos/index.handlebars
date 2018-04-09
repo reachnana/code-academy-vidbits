@@ -1,0 +1,16 @@
+<div class="contents-container" id="videos-container">
+  {{#each videos as |video|}}
+  <div class="video-card">
+    {{#if video.gif}}
+    <img class="video-player" src="{{video.url}}" />
+    {{else}}
+    <iframe class="video-player" src="{{video.url}}" frameborder="0" allowfullscreen></iframe>
+    {{/if }}
+
+    <div class="video-title">
+      <a href="/videos/{{video._id}}"><span class="video-title-text">{{video.title}}</span></a>
+    </div>
+  </div>
+  {{/each}}
+</div>
+<a class="add-video-button" id="create-link" href="/videos/create">Create</a>

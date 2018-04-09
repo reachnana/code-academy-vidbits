@@ -1,0 +1,24 @@
+<div class="contents-container">
+  <div class="video-card">
+    <div class="video-title">
+      <h1 id="video-title">{{video.title}}</h1>
+    </div>
+
+    {{#if video.gif}}
+    <img id="video-url" class="video-player" src="{{video.url}}" />
+    {{else}}
+    <iframe id="video-url" class="video-player" src="{{video.url}}" frameborder="0" allowfullscreen></iframe>
+    {{/if }}
+
+    <div class="video-description">
+      <p id="video-description">{{video.description}}</p>
+    </div>
+
+    <a href="/videos/{{video._id}}/edit" class="edit-video-button" id="edit">Edit</a>
+
+    <form action="/videos/{{video._id}}/deletions" method="post">
+      <input id="delete" type="submit" value="Delete" class="input-button">
+    </form>
+
+  </div>
+</div>
